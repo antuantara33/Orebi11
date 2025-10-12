@@ -13,6 +13,7 @@ const Login = () => {
           password:"",
     })
     const [show,setShow] = useState(false)
+    const [isDark,setIsDark] = useState(false)
     const handleClick = ()=>{
        setShow(!show)
         
@@ -44,7 +45,16 @@ signInWithEmailAndPassword(auth, email, password)
         
        }
   return (
-    <div className="">
+    
+<div className={`${isDark ? "light" : "dark"}`}>
+  <div className="ml-[200px]">
+    <p onClick={()=>setIsDark(!isDark)}>
+      {
+        isDark ? "light":"dark"
+      }
+    </p>
+  </div>
+      <div className="py-10 font-dm dark:bg-black dark:text-white">
         <Container>
                 <ToastContainer 
                                  
@@ -97,7 +107,8 @@ signInWithEmailAndPassword(auth, email, password)
             </div>
         </Container>
     </div>
+</div>
   )
 }
 
-export default Login
+export default Login;

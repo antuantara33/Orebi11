@@ -111,6 +111,7 @@ const ProductDetails = () => {
             <div className='flex flex-col'>
               <p>{item.comment}</p>
                <p>{item.date}</p>
+               <p>moment().format('dddd')</p>
             </div>
           ))}
             </div>
